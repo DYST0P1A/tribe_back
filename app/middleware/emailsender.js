@@ -9,10 +9,7 @@ const transport = nodemailer.createTransport({
     },
 });
 
-const sendConfirmationEmail = function (name, email, confirmationCode) {
-    console.log(name)
-    console.log(email)
-    console.log(confirmationCode)
+const sendConfirmationEmail = function(name, email, confirmationCode) {
     transport.sendMail({
         from: '"Tribe" trib3.com@gmail.com',
         to: email,
