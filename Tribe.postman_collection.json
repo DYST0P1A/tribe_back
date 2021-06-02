@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "df075fb5-b1f3-418c-8f88-7af990a9c195",
+		"name": "Tribe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"miguel\",\r\n    \"lastname\": \"gómez\",\r\n    \"telephone\": \"645389254\",\r\n    \"email\": \"miguelgomez98@gmail.com\",\r\n    \"password\": \"perro123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"miguelgomez98@gmail.com\",\r\n    \"password\": \"gato123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar contraseña usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3Yjg4NTJkNjI2ZDJiN2NjMjA4YjYiLCJpYXQiOjE2MjI2NTM4OTd9.A3nfer7hHN3NC8fQ67vqcPchtnsYJ9udZ6panEB0h3Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldpassword\": \"perro123\",\r\n    \"password\": \"gato123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/me/changepass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"me",
+						"changepass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"DAISY LOTTA PURPLE BASKETBALL\",\r\n    \"description\": \"Sudadera morada con logo de la marca we are not friends\",\r\n    \"price\": 80,\r\n    \"category\": \"hoodie\",\r\n    \"sizes\": [\r\n        {\r\n            \"size\": \"S\"\r\n        },\r\n        {\r\n            \"size\": \"M\"\r\n        },\r\n        {\r\n            \"size\": \"L\"\r\n        },\r\n        {\r\n            \"size\": \"XL\"\r\n        }\r\n    ],\r\n    \"images\": [\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-front.jpg\"\r\n        },\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-back.jpg\"\r\n        }\r\n    ],\r\n    \"brand_id\": \"1\",\r\n    \"brand_name\": \"we are not friends\",\r\n    \"gender\": \"Unisex\",\r\n    \"color\": \"morado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener ropa por genero",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gender\": \"Unisex\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/getByGender",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"getByGender"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener ropa por categoria",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"hoodie\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/getByCategory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"getByCategory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
