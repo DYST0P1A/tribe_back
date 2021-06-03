@@ -3,6 +3,7 @@ const Prod = mongoose.model('Product');
 
 
 const productsCreate = async function (req, res) {
+    console.log("entra")
     try {
         const wear = await new Prod(req.body)
 
@@ -14,6 +15,7 @@ const productsCreate = async function (req, res) {
 
         return res.status(200).send('Success');
     } catch(error) {
+        console.log(error)
         return res.status(500).send({"message": "error"})
     }
 }
