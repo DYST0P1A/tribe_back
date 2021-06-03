@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const router = express.Router();
 const ctrlUsers = require('../controllers/users');
@@ -17,7 +15,7 @@ router
 router
     .route('/users/me')
     .get(auth, ctrlUsers.userMe)
-    
+
 router
     .route('/users/me/changepass')
     .post(auth, ctrlUsers.changePassword)
@@ -32,6 +30,7 @@ router
 router
     .route('/products')
     .post(ctrlProducts.productsCreate)
+    .get(ctrlProducts.productById)
 
 router
     .route('/products/getByGender')
