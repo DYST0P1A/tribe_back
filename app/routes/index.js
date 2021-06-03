@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ctrlUsers = require('../controllers/users');
 const ctrlProducts = require('../controllers/products');
+const ctrlBrands = require('../controllers/brands');
 const auth = require('../middleware/auth');
 
 router
@@ -40,5 +41,11 @@ router
     .route('/products/getByCategory')
     .get(ctrlProducts.productsByCategory)
 
+
+
+
+router
+    .route('/brands')
+    .post(ctrlBrands.brandsCreate)
 
 module.exports = router;
