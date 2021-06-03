@@ -12,6 +12,19 @@ const productsCreate = async function(req, res) {
             }
         });
 
+        const brand = await Brand.findById(wear.brand_id)
+        if (brand) {
+            const id_product = wear._id
+            brand.id_products = await brand.id_products.concat({ id_product })
+            await brand.save(async function(err) {
+                if (err) {
+                    return res.status(500).send(err)
+                }
+            });
+        } else {
+            return res.status(404).json({ "message": "Marca no encontrada" })
+        }
+
         return res.status(200).send('Success');
     } catch (error) {
         return res.status(500).send({ "message": "error" })
@@ -60,9 +73,25 @@ const productById = async function(req, res) {
     }
 }
 
+const productByName = async function(req, res) {
+    try {
+        const queryName = req.body.query
+        const products = await Prod.find({ "name": { "$regex": queryName, "$options": "i" } })
+        if (products.length !== 0) {
+            return res.status(200).send(products)
+        } else {
+            return res.status(200).json([])
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
 module.exports = {
     productsCreate,
     productsByGender,
     productsByCategory,
-    productById
+    productById,
+    productByName
 };

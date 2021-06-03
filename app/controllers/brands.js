@@ -18,6 +18,23 @@ const brandsCreate = async function(req, res) {
     }
 }
 
+
+const brandByName = async function(req, res) {
+    try {
+        const queryName = req.body.query
+        const brands = await Brand.find({ "name": { "$regex": queryName, "$options": "i" } })
+        if (brands.length !== 0) {
+            return res.status(200).send(brands)
+        } else {
+            return res.status(200).json([])
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
 module.exports = {
-    brandsCreate
+    brandsCreate,
+    brandByName
 };

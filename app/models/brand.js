@@ -21,9 +21,11 @@ const brandSchema = new mongoose.Schema({
         unique: true
     },
     id_products: [{
-        type: String,
-        required: false
-    }, ]
+        id_product: {
+            type: String,
+            required: false
+        }
+    }]
 });
 
 mongoose.model('Brand', brandSchema);

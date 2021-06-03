@@ -41,11 +41,19 @@ router
     .route('/products/getByCategory')
     .get(ctrlProducts.productsByCategory)
 
+router
+    .route('/products/search')
+    .get(ctrlProducts.productByName)
 
 
 
 router
     .route('/brands')
     .post(ctrlBrands.brandsCreate)
+
+router
+    .route('/brands/search')
+    .get(ctrlBrands.brandByName)
+
 
 module.exports = router;
