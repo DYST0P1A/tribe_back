@@ -15,6 +15,10 @@
   "bugs": {
     "url": "https://github.com/xstarainx/tribe_back/issues"
   },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "homepage": "https://github.com/xstarainx/tribe_back#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
