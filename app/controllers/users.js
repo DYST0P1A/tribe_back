@@ -6,7 +6,7 @@ const emailSender = require('../middleware/emailsender');
 require('dotenv').config();
 
 
-const usersCreate = async function (req, res) {
+const usersCreate = async function(req, res) {
     try {
         const user = await new Us(req.body)
 
@@ -15,18 +15,18 @@ const usersCreate = async function (req, res) {
         if (userExists !== null && userExists.status === "Pending") {
             await Us.find({ email: userExists.email }).deleteOne().exec();
         } else if (userExists !== null && userExists.status === "Active") {
-            return res.status(409).json({ "message": "Ya existe una cuenta con ese correo}" });
+            return res.status(409).json({ "message": "Ya existe una cuenta con ese correo" });
         }
 
         const emailCode = jwt.sign({ email: req.body.email }, process.env.EMAIL_KEY)
-        const token = await user.generateAuthToken()      // generamos un token de autenticación
+        const token = await user.generateAuthToken() // generamos un token de autenticación
 
         user.state = "Pending"
         user.confirmationCode = emailCode
         user.password = await bcrypt.hash(user.password, 8)
         user.tokens = await user.tokens.concat({ token })
 
-        await user.save(async function (err) {
+        await user.save(async function(err) {
             if (err) {
                 return res.status(500).send(err)
             }
@@ -34,17 +34,17 @@ const usersCreate = async function (req, res) {
         });
 
         return res.status(200).send('Success');
-    } catch(error) {
-        return res.status(500).send({"message": "error"})
+    } catch (error) {
+        return res.status(500).send({ "message": "error" })
     }
 }
 
-const confirmAccount = async function (req, res) {
+const confirmAccount = async function(req, res) {
     try {
         let code = req.params.code
         Us.findOne({
-            "confirmationCode": code,
-        })
+                "confirmationCode": code,
+            })
             .then((user) => {
                 if (!user) {
                     return res.status(404).send({ "message": "Usuario no encontrado" });
@@ -53,8 +53,7 @@ const confirmAccount = async function (req, res) {
                 user.save((err) => {
                     if (err) {
                         return res.status(500).send({ "message": err });
-                    }
-                    else {
+                    } else {
                         return res.redirect('https://www.google.es');
                     }
                 });
@@ -64,7 +63,7 @@ const confirmAccount = async function (req, res) {
     }
 }
 
-const usersLogin = async function (req, res) {
+const usersLogin = async function(req, res) {
     try {
         const { email, password } = req.body
 
@@ -80,7 +79,7 @@ const usersLogin = async function (req, res) {
 
         const token = await user.generateAuthToken()
         user.tokens = await user.tokens.concat({ token })
-        await user.save(async function (err) {
+        await user.save(async function(err) {
             if (err) {
                 return res.status(500).send(err)
             }
@@ -94,22 +93,22 @@ const usersLogin = async function (req, res) {
     }
 }
 
-const userMe = function (req, res) {
+const userMe = function(req, res) {
     res.send(req.user)
 }
 
-const changePassword = async function (req, res) {
+const changePassword = async function(req, res) {
     try {
         if (!req.user.email) {
             return res.status(400).json({ "message": "Usuario no especificado" });
         }
-    
+
         try {
             const userVal = await Us.findByCredentials(req.user.email, req.body.oldpassword)
         } catch (err) {
             return res.status(400).json({ "message": "Credenciales incorrectas" });
         }
-    
+
         const pass = await bcrypt.hash(req.body.password, 8)
         Us
             .findOne({ email: req.user.email })
@@ -130,8 +129,7 @@ const changePassword = async function (req, res) {
                         return res.status(200).json({ "message": "success" });
                     }
                 });
-            }
-            );
+            });
     } catch (error) {
         res.status(500).send(error)
     }
