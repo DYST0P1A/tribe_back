@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Prod = mongoose.model('Product');
+const Brand = mongoose.model('Brand')
 
 
 const productsCreate = async function(req, res) {
