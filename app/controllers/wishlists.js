@@ -34,8 +34,8 @@ const getWishlist = async function(req, res) {
     try {
         const user = req.user
         let wishlist = []
-        for (var i in user.cart) {
-            let idItem = user.favorites[i].id_item
+        for (var i in user.wishlist) {
+            let idItem = user.wishlist[i].id_item
 
             let item = await Prod.findById(idItem)
             if (item) {

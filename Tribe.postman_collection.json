@@ -470,12 +470,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/brands/search",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/brands/search",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"brands",
@@ -515,12 +516,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/me/cart",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/users/me/cart",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -547,17 +549,178 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/users/me/cart",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/users/me/cart",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
 								"me",
 								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FavoritesController",
+			"item": [
+				{
+					"name": "Añadir/quitar producto de favoritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60b95b76f5fd840015b9aa0b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/wishlist",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener favoritos de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/favorites",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WishlistsController",
+			"item": [
+				{
+					"name": "Añadir/quitar producto de wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60b95b76f5fd840015b9aa0b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/favorites",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener wishlist de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/wishlist",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"wishlist"
 							]
 						}
 					},

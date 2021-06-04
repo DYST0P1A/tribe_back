@@ -34,7 +34,7 @@ const getFavorites = async function(req, res) {
     try {
         const user = req.user
         let favorites = []
-        for (var i in user.cart) {
+        for (var i in user.favorites) {
             let idItem = user.favorites[i].id_item
 
             let item = await Prod.findById(idItem)
@@ -47,6 +47,7 @@ const getFavorites = async function(req, res) {
 
         return res.status(200).send({ favorites });
     } catch (error) {
+        console.log(error)
         return res.status(500).send({ "message": "error" })
     }
 }
