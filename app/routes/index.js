@@ -3,8 +3,12 @@ const router = express.Router();
 const ctrlUsers = require('../controllers/users');
 const ctrlProducts = require('../controllers/products');
 const ctrlBrands = require('../controllers/brands');
+const ctrlCarts = require('../controllers/carts')
+const ctrlFavorites = require('../controllers/favorites')
+const ctrlWishLists = require('../controllers/wishlists')
 const auth = require('../middleware/auth');
 
+// Users
 router
     .route('/users')
     .post(ctrlUsers.usersCreate);
@@ -26,8 +30,28 @@ router
     .get(ctrlUsers.confirmAccount)
 
 
+// Carts
+router
+    .route('/users/me/cart')
+    .post(auth, ctrlCarts.updateCart)
+    .get(auth, ctrlCarts.getCart)
 
 
+// Favorites
+router
+    .route('/users/me/favorites')
+    .post(auth, ctrlFavorites.updateFavorites)
+    .get(auth, ctrlFavorites.getFavorites)
+
+
+// WishLists
+router
+    .route('/users/me/wishlist')
+    .post(auth, ctrlWishLists.updateWishList)
+    .get(auth, ctrlWishLists.getWishlist)
+
+
+// Prodcuts
 router
     .route('/products')
     .post(ctrlProducts.productsCreate)
@@ -62,7 +86,7 @@ router
     .get(ctrlProducts.productsByPrice)
 
 
-
+// Brands
 router
     .route('/brands')
     .post(ctrlBrands.brandsCreate)

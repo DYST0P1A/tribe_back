@@ -3,6 +3,25 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+
+const itemsSchema = new mongoose.Schema({
+    id_item: {
+        type: String,
+        required: true
+    },
+    sizeSelected: {
+        type: String,
+        required: false,
+        default: ""
+    },
+    quantity: {
+        type: Number,
+        required: true,
+        default: 1
+    }
+})
+
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -42,12 +61,12 @@ const userSchema = new mongoose.Schema({
            required: true
         }
     }],
-    cart: [{
-        id_item: {
-            type: String,
-            required: false
-        }
-    }],
+    totalPrice: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    cart: [itemsSchema],
     favorites: [{
         id_item: {
             type: String,

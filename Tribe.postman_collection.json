@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7259b53c-5e23-45f2-b000-1381aa57e592",
+		"_postman_id": "1cf30b0c-24f0-4a56-a606-fc8601331ed1",
 		"name": "Tribe",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"miguel\",\r\n    \"lastname\": \"gómez\",\r\n    \"telephone\": \"645389254\",\r\n    \"email\": \"miguelgomez98@gmail.com\",\r\n    \"password\": \"perro123\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Pablo\",\r\n    \"lastname\": \"Gómez\",\r\n    \"telephone\": \"645063046\",\r\n    \"email\": \"pablogomeztic95@gmail.com\",\r\n    \"password\": \"perro123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,12 +23,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users"
@@ -44,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"miguelgomez98@gmail.com\",\r\n    \"password\": \"gato123\"\r\n}",
+							"raw": "{\r\n    \"email\": \"pablogomeztic95@gmail.com\",\r\n    \"password\": \"gato123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -52,12 +53,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/login",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/users/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -75,7 +77,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3Yjg4NTJkNjI2ZDJiN2NjMjA4YjYiLCJpYXQiOjE2MjI2NTM4OTd9.A3nfer7hHN3NC8fQ67vqcPchtnsYJ9udZ6panEB0h3Y",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI3NDQwNjJ9.j2hS2QLGNnrN1ZL9fN-ZEcZwhS2gfJ3sPRH2Y7H2dRg",
 									"type": "string"
 								}
 							]
@@ -92,12 +94,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/me/changepass",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/users/me/changepass",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -120,7 +123,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"DAISY LOTTA PURPLE BASKETBALL\",\r\n    \"description\": \"Sudadera morada con logo de la marca we are not friends\",\r\n    \"price\": 80,\r\n    \"category\": \"hoodie\",\r\n    \"sizes\": [\r\n        {\r\n            \"size\": \"S\"\r\n        },\r\n        {\r\n            \"size\": \"M\"\r\n        },\r\n        {\r\n            \"size\": \"L\"\r\n        },\r\n        {\r\n            \"size\": \"XL\"\r\n        }\r\n    ],\r\n    \"images\": [\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-front.jpg\"\r\n        },\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-back.jpg\"\r\n        }\r\n    ],\r\n    \"brand_id\": \"1\",\r\n    \"brand_name\": \"we are not friends\",\r\n    \"gender\": \"Unisex\",\r\n    \"color\": \"morado\"\r\n}",
+							"raw": "{\r\n    \"name\": \"DAISY LOTTA PURPLE BASKETBALL\",\r\n    \"description\": \"Sudadera morada con logo de la marca we are not friends\",\r\n    \"price\": 80,\r\n    \"category\": \"hoodie\",\r\n    \"sizes\": [\r\n        {\r\n            \"size\": \"S\"\r\n        },\r\n        {\r\n            \"size\": \"M\"\r\n        },\r\n        {\r\n            \"size\": \"L\"\r\n        },\r\n        {\r\n            \"size\": \"XL\"\r\n        }\r\n    ],\r\n    \"images\": [\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-front.jpg\"\r\n        },\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-back.jpg\"\r\n        }\r\n    ],\r\n    \"brand_id\": \"60b9505467e1e10015ddfe64\",\r\n    \"brand_name\": \"We are not friends\",\r\n    \"gender\": \"Unisex\",\r\n    \"color\": \"morado\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -128,12 +131,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/products",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/products",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"products"
@@ -143,7 +147,7 @@
 					"response": []
 				},
 				{
-					"name": "Obtener producto por genero",
+					"name": "Obtener producto por id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -152,7 +156,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"gender\": \"Unisex\"\r\n}",
+							"raw": "{\r\n    \"id\": \"60b8a34c53159c43000cfc88\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -160,16 +164,84 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/products/getByGender",
-							"protocol": "http",
+							"raw": "https://tribeback.herokuapp.com/api/products",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"tribeback",
+								"herokuapp",
+								"com"
 							],
-							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por nombre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"lotta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/search",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
 							"path": [
 								"api",
 								"products",
-								"getByGender"
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por precio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"minPrice\": \"50\",\r\n    \"maxPrice\": \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByPrice",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByPrice"
 							]
 						}
 					},
@@ -193,7 +265,212 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/products/getByCategory",
+							"raw": "https://tribeback.herokuapp.com/api/products/getByCategory",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por talla",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getBySize",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getBySize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por marca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"We are not friends\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByBrand",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByBrand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por genero",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gender\": \"Unisex\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByGender",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByGender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por color",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"color\": \"morado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByColor",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByColor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BrandsController",
+			"item": [
+				{
+					"name": "Crear marca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"We are not friends\",\r\n    \"logo\": \"https://weare-notfriends.com/wp-content/uploads/2020/07/we-are-not-friends-detail-rug-21-copy.jpg\",\r\n    \"telephone\": \"689752012\",\r\n    \"email\": \"letsbefriends@weare-notfriends.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/brands",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener marca por nombre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"we\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/brands/search",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -201,8 +478,86 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"products",
-								"getByCategory"
+								"brands",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CartsController",
+			"item": [
+				{
+					"name": "Añadir/quitar producto del carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60b95b76f5fd840015b9aa0b\",\r\n    \"sizeSelected\": \"M\",\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/me/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"me",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener carrito de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/me/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"me",
+								"cart"
 							]
 						}
 					},
