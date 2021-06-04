@@ -32,6 +32,7 @@ const ordersCreate = async function(req, res) {
 
         const user = req.user
         user.cart = []
+        user.totalPrice = 0
         await user.save(async function(err) {
             if (err) {
                 return res.status(500).send(err)

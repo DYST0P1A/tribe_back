@@ -33,7 +33,6 @@ const updateCart = async function(req, res) {
             let item = await Prod.findById(idItem)
             if (item) {
                 totalPrice = totalPrice + item.price * user.cart[i].quantity
-                cart.push({ "item": item, "quantity": user.cart[i].quantity, "sizeSelected": user.cart[i].sizeSelected })
             } else {
                 return res.status(404).json({ "message": "Producto no encontrado" })
             }
@@ -47,6 +46,7 @@ const updateCart = async function(req, res) {
 
         return res.status(200).send('Success');
     } catch (error) {
+        console.log(error)
         return res.status(500).send({ "message": "error" })
     }
 }
