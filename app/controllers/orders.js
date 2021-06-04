@@ -7,23 +7,24 @@ const ordersCreate = async function(req, res) {
         const cartUser = req.user.cart
         const order = []
 
-        var date = new Date(+new Date() + 2*60*60*1000)   
+        var date = new Date(+new Date() + 2 * 60 * 60 * 1000)
         order.date = date
         order.totalPrice = req.user.totalPrice
         order.emailClient = req.user.email
 
         let cart = []
-        for(var i in cartUser) {
+        for (var i in cartUser) {
             const id_item = cartUser[i].id_item
             const sizeSelected = cartUser[i].sizeSelected
             const quantity = cartUser[i].quantity
             const emailSeller = cartUser[i].emailSeller
             const type = cartUser[i].type
-            cart.push({"id_item" : id_item, "sizeSelected" : sizeSelected, "quantity" : quantity, "emailSeller" : emailSeller, "type" : type})
+            cart.push({ "id_item": id_item, "sizeSelected": sizeSelected, "quantity": quantity, "emailSeller": emailSeller, "type": type })
         }
         order.cart = cart
+        const orderInsert = await new Order(order)
 
-        await order.save(async function(err) {
+        await orderInsert.save(async function(err) {
             if (err) {
                 return res.status(500).send(err)
             }
@@ -50,10 +51,9 @@ const getOrders = async function(req, res) {
         const email = req.user.email
 
         const orders = await Order.find({ "emailClient": email })
-        if(orders.length !== 0) {
+        if (orders.length !== 0) {
             return res.status(200).send(orders)
-        }
-        else {
+        } else {
             return res.status(200).send([])
         }
     } catch (error) {

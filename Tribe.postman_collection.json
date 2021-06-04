@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Pablo\",\r\n    \"lastname\": \"Gómez\",\r\n    \"telephone\": \"645063046\",\r\n    \"email\": \"pablogomeztic95@gmail.com\",\r\n    \"password\": \"perro123\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"lastname\": \"Admin\",\r\n    \"telephone\": \"0\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"pablogomeztic95@gmail.com\",\r\n    \"password\": \"gato123\"\r\n}",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -119,11 +119,21 @@
 				{
 					"name": "Crear producto",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhN2E0ZjZmNzliZDAwMTU5NTE4OTAiLCJpYXQiOjE2MjI4MzM4MTd9.Bb07EYztkJ0huFQu_5NtAvDygR9tc35ReOCHmolyTc4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"DAISY LOTTA PURPLE BASKETBALL\",\r\n    \"description\": \"Sudadera morada con logo de la marca we are not friends\",\r\n    \"price\": 80,\r\n    \"category\": \"hoodie\",\r\n    \"sizes\": [\r\n        {\r\n            \"size\": \"S\"\r\n        },\r\n        {\r\n            \"size\": \"M\"\r\n        },\r\n        {\r\n            \"size\": \"L\"\r\n        },\r\n        {\r\n            \"size\": \"XL\"\r\n        }\r\n    ],\r\n    \"images\": [\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-front.jpg\"\r\n        },\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-back.jpg\"\r\n        }\r\n    ],\r\n    \"brand_id\": \"60b9505467e1e10015ddfe64\",\r\n    \"brand_name\": \"We are not friends\",\r\n    \"gender\": \"Unisex\",\r\n    \"color\": \"morado\"\r\n}",
+							"raw": "{\r\n    \"name\": \"DAISY LOTTA PURPLE BASKETBALL\",\r\n    \"description\": \"Sudadera morada con logo de la marca we are not friends\",\r\n    \"price\": 80,\r\n    \"category\": \"Hoodie\",\r\n    \"sizes\": [\r\n        {\r\n            \"size\": \"S\"\r\n        },\r\n        {\r\n            \"size\": \"M\"\r\n        },\r\n        {\r\n            \"size\": \"L\"\r\n        },\r\n        {\r\n            \"size\": \"XL\"\r\n        }\r\n    ],\r\n    \"images\": [\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-front.jpg\"\r\n        },\r\n        {\r\n            \"image\": \"https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-back.jpg\"\r\n        }\r\n    ],\r\n    \"brand_id\": \"60ba7ac36f79bd001595189a\",\r\n    \"brand_name\": \"We are not friends\",\r\n    \"gender\": \"Unisex\",\r\n    \"color\": \"Morado\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -156,7 +166,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"60b8a34c53159c43000cfc88\"\r\n}",
+							"raw": "{\r\n    \"id\": \"60ba7bda6f79bd00159518ab\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -257,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"category\": \"hoodie\"\r\n}",
+							"raw": "{\r\n    \"category\": \"Hoodie\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -393,7 +403,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"color\": \"morado\"\r\n}",
+							"raw": "{\r\n    \"color\": \"Morado\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -499,7 +509,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -508,7 +518,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60b95b76f5fd840015b9aa0b\",\r\n    \"sizeSelected\": \"M\",\r\n    \"quantity\": 3\r\n}",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60ba7bda6f79bd00159518ab\",\r\n    \"sizeSelected\": \"M\",\r\n    \"quantity\": 3,\r\n    \"type\": \"brand\",\r\n    \"emailSeller\": \"letsbefriends@weare-notfriends.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -541,7 +551,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -579,7 +589,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -588,7 +598,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60b95b76f5fd840015b9aa0b\"\r\n}",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60ba7bda6f79bd00159518ab\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -596,7 +606,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://tribeback.herokuapp.com/api/users/me/wishlist",
+							"raw": "https://tribeback.herokuapp.com/api/users/me/favorites",
 							"protocol": "https",
 							"host": [
 								"tribeback",
@@ -607,7 +617,7 @@
 								"api",
 								"users",
 								"me",
-								"wishlist"
+								"favorites"
 							]
 						}
 					},
@@ -621,7 +631,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -659,7 +669,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -668,7 +678,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60b95b76f5fd840015b9aa0b\"\r\n}",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60ba7bda6f79bd00159518ab\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -676,7 +686,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://tribeback.herokuapp.com/api/users/me/favorites",
+							"raw": "https://tribeback.herokuapp.com/api/users/me/wishlist",
 							"protocol": "https",
 							"host": [
 								"tribeback",
@@ -687,7 +697,7 @@
 								"api",
 								"users",
 								"me",
-								"favorites"
+								"wishlist"
 							]
 						}
 					},
@@ -701,7 +711,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MTcwMzVhZjJkMTAwMTU2Y2MyNjgiLCJpYXQiOjE2MjI4MTI1MzR9.4TWiwE1pte8XAfyvwFXa8gkxxNKwzf49Mevlg2V6CaM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -721,6 +731,85 @@
 								"users",
 								"me",
 								"wishlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrdersController",
+			"item": [
+				{
+					"name": "Crear pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailClient\": \"pablogomeztic95@gmail.com\",\r\n    \"emailSeller\": \"letsbefriends@weare-notfriends.com\",\r\n    \"type\": \"brand\",\r\n    \"totalPrice\": 240,\r\n    \"cart\": [\r\n        {\r\n            \"id_item\": \"60ba7bda6f79bd00159518ab\",\r\n            \"sizeSelected\": \"M\",\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/me/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"me",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener pedidos de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/orders",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"orders"
 							]
 						}
 					},
