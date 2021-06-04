@@ -54,7 +54,7 @@ const confirmAccount = async function(req, res) {
                     if (err) {
                         return res.status(500).send({ "message": err });
                     } else {
-                        return res.redirect('https://www.google.es');
+                        return res.redirect('https://tribe-web.herokuapp.com/');
                     }
                 });
             })

@@ -34,6 +34,10 @@ router
     .get(ctrlProducts.productById)
 
 router
+    .route('/products/getByBrand')
+    .get(ctrlProducts.productsByBrand)
+
+router
     .route('/products/getByGender')
     .get(ctrlProducts.productsByGender)
 
@@ -44,6 +48,18 @@ router
 router
     .route('/products/search')
     .get(ctrlProducts.productByName)
+
+router
+    .route('/products/getBySize')
+    .get(ctrlProducts.productsBySize)
+
+router
+    .route('/products/getByColor')
+    .get(ctrlProducts.productsByColor)
+
+router
+    .route('/products/getByPrice')
+    .get(ctrlProducts.productsByPrice)
 
 
 

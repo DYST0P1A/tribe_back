@@ -33,6 +33,20 @@ const productsCreate = async function(req, res) {
     }
 }
 
+const productsByBrand = async function(req, res) {
+    try {
+        const brand = req.body.brand
+        const products = await Prod.find({ "brand_name": brand })
+        if (products.length !== 0) {
+            return res.status(200).send(products)
+        } else {
+            return res.status(200).json([])
+        }
+    } catch (error) {
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
 const productsByGender = async function(req, res) {
     try {
         const gender = req.body.gender
@@ -90,10 +104,57 @@ const productByName = async function(req, res) {
     }
 }
 
+const productsBySize = async function(req, res) {
+    try {
+        const size = req.body.size
+        const products = await Prod.find({ "sizes.size": size })
+        if (products.length !== 0) {
+            return res.status(200).send(products)
+        } else {
+            return res.status(200).json([])
+        }
+    } catch (error) {
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
+const productsByColor = async function(req, res) {
+    try {
+        const color = req.body.color
+        const products = await Prod.find({ "color": color })
+        if (products.length !== 0) {
+            return res.status(200).send(products)
+        } else {
+            return res.status(200).json([])
+        }
+    } catch (error) {
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
+const productsByPrice = async function(req, res) {
+    try {
+        const min = req.body.minPrice
+        const max = req.body.maxPrice
+        const products = await Prod.find({ "price": { $gte: min, $lte: max } })
+        if (products.length !== 0) {
+            return res.status(200).send(products)
+        } else {
+            return res.status(200).json([])
+        }
+    } catch (error) {
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
 module.exports = {
     productsCreate,
     productsByGender,
     productsByCategory,
     productById,
-    productByName
+    productByName,
+    productsBySize,
+    productsByColor,
+    productsByBrand,
+    productsByPrice
 };
