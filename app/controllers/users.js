@@ -22,6 +22,7 @@ const usersCreate = async function(req, res) {
         const token = await user.generateAuthToken() // generamos un token de autenticación
 
         user.state = "Pending"
+        user.type = "client"
         user.confirmationCode = emailCode
         user.password = await bcrypt.hash(user.password, 8)
         user.tokens = await user.tokens.concat({ token })
@@ -86,8 +87,9 @@ const usersLogin = async function(req, res) {
         });
         const name = user.name
         const lastname = user.lastname
+        const type = user.type
 
-        return res.status(200).send({ name, lastname, token })
+        return res.status(200).send({ name, lastname, type, token })
     } catch (error) {
         res.status(500).send(error)
     }
@@ -136,10 +138,28 @@ const changePassword = async function(req, res) {
 }
 
 
+const usersLogout = async function(req, res) {
+    try {
+        const user = req.user
+        const tokenDelete = req.token
+
+        user.tokens.splice(user.tokens.findIndex(e => e.token === tokenDelete), 1);
+        await user.save(async function(err) {
+            if (err) {
+                return res.status(500).send(err)
+            }
+        });
+        return res.redirect('https://tribe-web.herokuapp.com/');
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
 module.exports = {
     usersCreate,
     confirmAccount,
     usersLogin,
     userMe,
-    changePassword
+    changePassword,
+    usersLogout
 };

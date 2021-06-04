@@ -6,6 +6,8 @@ const ctrlBrands = require('../controllers/brands');
 const ctrlCarts = require('../controllers/carts')
 const ctrlFavorites = require('../controllers/favorites')
 const ctrlWishLists = require('../controllers/wishlists')
+const ctrlOrders = require('../controllers/orders')
+
 const auth = require('../middleware/auth');
 
 // Users
@@ -24,6 +26,10 @@ router
 router
     .route('/users/me/changepass')
     .post(auth, ctrlUsers.changePassword)
+
+router
+    .route('/users/me/logout')
+    .post(auth, ctrlUsers.usersLogout)
 
 router
     .route('/confirm/:code')
@@ -54,7 +60,7 @@ router
 // Prodcuts
 router
     .route('/products')
-    .post(ctrlProducts.productsCreate)
+    .post(auth, ctrlProducts.productsCreate)
     .get(ctrlProducts.productById)
 
 router
@@ -89,11 +95,17 @@ router
 // Brands
 router
     .route('/brands')
-    .post(ctrlBrands.brandsCreate)
+    .post(auth, ctrlBrands.brandsCreate)
 
 router
     .route('/brands/search')
     .get(ctrlBrands.brandByName)
 
+
+// Orders
+router
+    .route('/users/me/orders')
+    .post(auth, ctrlOrders.ordersCreate)
+    .get(auth, ctrlOrders.getOrders)
 
 module.exports = router;

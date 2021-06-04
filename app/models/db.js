@@ -45,3 +45,4 @@ process.on('SIGTERM', () => {
 require('./user');
 require('./product')
 require('./brand')
+require('./order')

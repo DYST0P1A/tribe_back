@@ -5,6 +5,10 @@ const Brand = mongoose.model('Brand')
 
 const productsCreate = async function(req, res) {
     try {
+        if(req.user.type !== "admin") {
+            return res.status(403).send({"message": "No posees permisos para esta accion"})
+        }
+        
         const wear = await new Prod(req.body)
 
         await wear.save(async function(err) {

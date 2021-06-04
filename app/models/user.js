@@ -18,7 +18,16 @@ const itemsSchema = new mongoose.Schema({
         type: Number,
         required: true,
         default: 1
-    }
+    },
+    type: {
+        type: String,
+        enum: ['brand', 'user'],
+        required: true
+    },
+    emailSeller: {
+        type: String,
+        required: true
+    },
 })
 
 
@@ -45,7 +54,13 @@ const userSchema = new mongoose.Schema({
     status: {
         type: String, 
         enum: ['Pending', 'Active'],
+        required: true,
         default: 'Pending'
+    },
+    type: {
+        type: String,
+        enum: ['client', 'admin'],
+        default: 'client'
     },
     confirmationCode: { 
         type: String, 
