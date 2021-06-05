@@ -157,22 +157,10 @@
 					"response": []
 				},
 				{
-					"name": "Obtener producto por id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Obtener todos los productos",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"60ba7bda6f79bd00159518ab\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "https://tribeback.herokuapp.com/api/products",
 							"protocol": "https",
@@ -184,6 +172,40 @@
 							"path": [
 								"api",
 								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"60bb581e3c8ea50015b02072\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getById",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getById"
 							]
 						}
 					},
@@ -267,7 +289,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"category\": \"Hoodie\"\r\n}",
+							"raw": "{\r\n    \"category\": \"Sudadera\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -456,6 +478,27 @@
 								}
 							}
 						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/brands",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las marcas",
+					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "https://tribeback.herokuapp.com/api/brands",
 							"protocol": "https",

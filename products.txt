@@ -1,0 +1,33 @@
+{
+    "name": "DAISY LOTTA PURPLE BASKETBALL",
+    "description": "Sudadera morada con logo de la marca we are not friends",
+    "price": 80,
+    "category": "Hoodie",
+    "sizes": [
+        {
+            "size": "S"
+        },
+        {
+            "size": "M"
+        },
+        {
+            "size": "L"
+        },
+        {
+            "size": "XL"
+        }
+    ],
+    "images": [
+        {
+            "image": "https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-front.jpg"
+        },
+        {
+            "image": "https://weare-notfriends.com/wp-content/uploads/2021/04/hoodie-back.jpg"
+        }
+    ],
+    "brand_id": "60ba7ac36f79bd001595189a",
+    "brand_name": "We are not friends",
+    "gender": "Unisex",
+    "color": "Morado"
+}
+

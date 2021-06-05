@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+const productUsedSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -18,12 +18,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    sizes: [{
-        size: {
-            type: String,
-            required: false
-        }
-    }],
+    size: {
+        type: String,
+        required: false
+    },
     images: [{
         image: {
             type: String,
@@ -34,9 +32,9 @@ const productSchema = new mongoose.Schema({
         type: String,
         enum: ['brand', 'user'],
         required: true,
-        default: 'brand'
+        default: 'user'
     },
-    brand_id: {
+    emailSeller: {
         type: String,
         required: false
     },
@@ -53,16 +51,11 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: false //????????? existe algo para colores en mongoose?
     },
-    score: {
+    valoration: {
         type: Number,
-        required: false,
-        default: 0
+        enum: [-1, 1, 2, 3, 4, 5],
+        default: -1
     },
-    numScores: {
-        type: Number,
-        required: false,
-        default: 0
-    }
 });
 
 

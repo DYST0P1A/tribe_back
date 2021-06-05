@@ -5,10 +5,10 @@ const Brand = mongoose.model('Brand')
 
 const productsCreate = async function(req, res) {
     try {
-        if(req.user.type !== "admin") {
-            return res.status(403).send({"message": "No posees permisos para esta accion"})
+        if (req.user.type !== "admin") {
+            return res.status(403).send({ "message": "No posees permisos para esta accion" })
         }
-        
+
         const wear = await new Prod(req.body)
 
         await wear.save(async function(err) {
@@ -31,6 +31,20 @@ const productsCreate = async function(req, res) {
         }
 
         return res.status(200).send('Success');
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
+const getProducts = async function(req, res) {
+    try {
+        const products = await Prod.find({})
+        if (products.length !== 0) {
+            return res.status(200).send(products)
+        } else {
+            return res.status(200).json([])
+        }
     } catch (error) {
         console.log(error)
         return res.status(500).send({ "message": "error" })
@@ -153,6 +167,7 @@ const productsByPrice = async function(req, res) {
 
 module.exports = {
     productsCreate,
+    getProducts,
     productsByGender,
     productsByCategory,
     productById,

@@ -61,6 +61,10 @@ router
 router
     .route('/products')
     .post(auth, ctrlProducts.productsCreate)
+    .get(ctrlProducts.getProducts)
+
+router
+    .route('/products/getById')
     .get(ctrlProducts.productById)
 
 router
@@ -96,6 +100,7 @@ router
 router
     .route('/brands')
     .post(auth, ctrlBrands.brandsCreate)
+    .get(ctrlBrands.getBrands)
 
 router
     .route('/brands/search')
