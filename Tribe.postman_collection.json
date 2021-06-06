@@ -124,7 +124,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhN2E0ZjZmNzliZDAwMTU5NTE4OTAiLCJpYXQiOjE2MjI4MzM4MTd9.Bb07EYztkJ0huFQu_5NtAvDygR9tc35ReOCHmolyTc4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
 									"type": "string"
 								}
 							]
@@ -452,6 +452,344 @@
 			]
 		},
 		{
+			"name": "ProductsUsed Controller",
+			"item": [
+				{
+					"name": "Crear producto usado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Polo Ralph Lauren Thorton- Low\",\r\n    \"description\": \"Zapatillas Polo Ralph Lauren\",\r\n    \"price\": 89,\r\n    \"category\": \"Zapatillas\",\r\n    \"size\": \"44\",\r\n    \"images\": [\r\n        {\r\n            \"image\": \"https://footdistrict.com/media/resize/420x525/catalog/product/1/5/150_3616419939960_150/polo-ralph-lauren-thorton-low-816839230002-0.webp\"\r\n        },\r\n        {\r\n            \"image\": \"https://footdistrict.com/media/resize/420x525/catalog/product/1/5/157_3616419939960_157/polo-ralph-lauren-thorton-low-816839230002-6.webp\"\r\n        }\r\n    ],\r\n    \"nameSeller\": \"Pablo Gómez\",\r\n    \"emailSeller\": \"pablogomeztic95@gmail.com\",\r\n    \"brand_name\": \"Polo Ralph Lauren\",\r\n    \"gender\": \"Men\",\r\n    \"color\": \"Negro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/productsUsed",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"productsUsed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los productos usados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/productsUsed",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"productsUsed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto  usado por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"60bbe4402501343a90ad35cc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/productsUsed/getById",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"productsUsed",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por nombre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"lotta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/search",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por precio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"minPrice\": \"50\",\r\n    \"maxPrice\": \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByPrice",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByPrice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por categoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"Sudadera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByCategory",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por talla",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getBySize",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getBySize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por marca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"We are not friends\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByBrand",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByBrand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por genero",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gender\": \"Unisex\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByGender",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByGender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto usado por color",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"color\": \"Morado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/products/getByColor",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"getByColor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "BrandsController",
 			"item": [
 				{
@@ -552,6 +890,74 @@
 			]
 		},
 		{
+			"name": "CategoriesController",
+			"item": [
+				{
+					"name": "Crear categoría",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhN2E0ZjZmNzliZDAwMTU5NTE4OTAiLCJpYXQiOjE2MjI4MzM4MTd9.Bb07EYztkJ0huFQu_5NtAvDygR9tc35ReOCHmolyTc4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pantalones\",\r\n    \"image\": \"https://www.7camicie.com/17998-big_default/trousers-chinos-premium-quality-dark-green-5793.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/categories",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las categorías",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "CartsController",
 			"item": [
 				{
@@ -571,7 +977,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60ba7bda6f79bd00159518ab\",\r\n    \"sizeSelected\": \"M\",\r\n    \"quantity\": 3,\r\n    \"type\": \"brand\",\r\n    \"emailSeller\": \"letsbefriends@weare-notfriends.com\"\r\n}",
+							"raw": "{\r\n    \"operation\": \"insert\",\r\n    \"id_item\": \"60bb581e3c8ea50015b02072\",\r\n    \"sizeSelected\": \"M\",\r\n    \"quantity\": 3,\r\n    \"type\": \"brand\",\r\n    \"emailSeller\": \"letsbefriends@weare-notfriends.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -811,7 +1217,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emailClient\": \"pablogomeztic95@gmail.com\",\r\n    \"emailSeller\": \"letsbefriends@weare-notfriends.com\",\r\n    \"type\": \"brand\",\r\n    \"totalPrice\": 240,\r\n    \"cart\": [\r\n        {\r\n            \"id_item\": \"60ba7bda6f79bd00159518ab\",\r\n            \"sizeSelected\": \"M\",\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -864,6 +1270,92 @@
 								"users",
 								"me",
 								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valorar producto de pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_order\": \"60bbd6cfcb512d08f485a434\",\r\n    \"id_product\": \"60bb581e3c8ea50015b02072\",\r\n    \"valoration\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/orders/valorate",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"orders",
+								"valorate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear pedido producto usado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJhNzkwZjZmNzliZDAwMTU5NTE4OGQiLCJpYXQiOjE2MjI4MzM0NzR9.Q3A3qrjGf2zDeHy0JB33VZTSTaJMg0yG63bmd-tPd-M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProductUsed\": \"60bbe4402501343a90ad35cc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tribeback.herokuapp.com/api/users/me/orders/productsUsed",
+							"protocol": "https",
+							"host": [
+								"tribeback",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"orders",
+								"productsUsed"
 							]
 						}
 					},
