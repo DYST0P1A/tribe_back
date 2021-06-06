@@ -51,7 +51,7 @@ const productSchema = new mongoose.Schema({
     },
     color: {
         type: String,
-        required: false //????????? existe algo para colores en mongoose?
+        required: false
     },
     score: {
         type: Number,
