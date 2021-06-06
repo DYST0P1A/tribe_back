@@ -46,3 +46,5 @@ require('./user');
 require('./product')
 require('./brand')
 require('./order')
+require('./productUsed')
+require('./category')

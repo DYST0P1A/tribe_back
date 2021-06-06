@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const ctrlUsers = require('../controllers/users');
 const ctrlProducts = require('../controllers/products');
+const ctrlProductsUsed = require('../controllers/productsUsed');
 const ctrlBrands = require('../controllers/brands');
+const ctrlCategories = require('../controllers/categories');
 const ctrlCarts = require('../controllers/carts')
 const ctrlFavorites = require('../controllers/favorites')
 const ctrlWishLists = require('../controllers/wishlists')
@@ -57,7 +59,7 @@ router
     .get(auth, ctrlWishLists.getWishlist)
 
 
-// Prodcuts
+// Products
 router
     .route('/products')
     .post(auth, ctrlProducts.productsCreate)
@@ -96,6 +98,45 @@ router
     .get(ctrlProducts.productsByPrice)
 
 
+// ProductsUsed
+router
+    .route('/productsUsed')
+    .post(auth, ctrlProductsUsed.productsUsedCreate)
+    .get(ctrlProductsUsed.getProductsUsed)
+
+router
+    .route('/productsUsed/getById')
+    .get(ctrlProductsUsed.productUsedById)
+
+router
+    .route('/productsUsed/getByBrand')
+    .get(ctrlProductsUsed.productsUsedByBrand)
+
+router
+    .route('/productsUsed/getByGender')
+    .get(ctrlProductsUsed.productsUsedByGender)
+
+router
+    .route('/productsUsed/getByCategory')
+    .get(ctrlProductsUsed.productsUsedByCategory)
+
+router
+    .route('/productsUsed/search')
+    .get(ctrlProductsUsed.productUsedByName)
+
+router
+    .route('/productsUsed/getBySize')
+    .get(ctrlProductsUsed.productsUsedBySize)
+
+router
+    .route('/productsUsed/getByColor')
+    .get(ctrlProductsUsed.productsUsedByColor)
+
+router
+    .route('/productsUsed/getByPrice')
+    .get(ctrlProductsUsed.productsUsedByPrice)
+
+
 // Brands
 router
     .route('/brands')
@@ -107,10 +148,28 @@ router
     .get(ctrlBrands.brandByName)
 
 
+//Categories   
+router
+    .route('/users/me/categories')
+    .post(auth, ctrlCategories.categoriesCreate)
+
+router
+    .route('/categories')
+    .get(ctrlCategories.getCategories)
+
+
 // Orders
 router
     .route('/users/me/orders')
     .post(auth, ctrlOrders.ordersCreate)
-    .get(auth, ctrlOrders.getOrders)
+    .get(ctrlOrders.getOrders)
+
+router
+    .route('/users/me/orders/valorate')
+    .post(auth, ctrlOrders.valorateProductOrder)
+
+router
+    .route('/users/me/orders/productsUsed')
+    .post(auth, ctrlOrders.productUsedOrder)
 
 module.exports = router;

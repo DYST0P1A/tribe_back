@@ -34,6 +34,10 @@ const productUsedSchema = new mongoose.Schema({
         required: true,
         default: 'user'
     },
+    nameSeller: {
+        type: String,
+        required: false
+    },
     emailSeller: {
         type: String,
         required: false
@@ -56,8 +60,13 @@ const productUsedSchema = new mongoose.Schema({
         enum: [-1, 1, 2, 3, 4, 5],
         default: -1
     },
+    sold: {
+        type: Number,
+        enum: [0, 1],
+        default: 0
+    }
 });
 
 
 
-mongoose.model('Product', productSchema);
+mongoose.model('ProductUsed', productUsedSchema);
