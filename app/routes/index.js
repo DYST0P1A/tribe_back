@@ -79,7 +79,7 @@ router
 
 router
     .route('/products/getByCategory')
-    .get(ctrlProducts.productsByCategory)
+    .post(ctrlProducts.productsByCategory)
 
 router
     .route('/products/search')
