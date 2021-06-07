@@ -67,7 +67,7 @@ router
 
 router
     .route('/products/getById')
-    .get(ctrlProducts.productById)
+    .post(ctrlProducts.productById)
 
 router
     .route('/products/getByBrand')
