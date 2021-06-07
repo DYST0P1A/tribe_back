@@ -95,6 +95,7 @@ const productsByCategory = async function(req, res) {
 
 const productById = async function(req, res) {
     try {
+        console.log(req.body.id)
         const idReq = req.body.id
         const product = await Prod.findById(idReq)
         if (product) {
