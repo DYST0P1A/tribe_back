@@ -17,7 +17,7 @@ const sendConfirmationEmail = function(name, email, confirmationCode) {
         html: `<h1>Confirmación de email</h1>
           <h2>Hola ${name}</h2>
           <p>Gracias por registrarte. Por favor confirma tu cuenta clickando en el siguiente enlace</p>
-          <a href=http://localhost:3000/api/confirm/${confirmationCode}> Click here</a>
+          <a href=https://tribeback.herokuapp.com/api/confirm/${confirmationCode}> Click here</a>
           </div>`,
     }).catch(err => console.log(err));
 };
