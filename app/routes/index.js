@@ -75,7 +75,7 @@ router
 
 router
     .route('/products/getByGender')
-    .get(ctrlProducts.productsByGender)
+    .post(ctrlProducts.productsByGender)
 
 router
     .route('/products/getByCategory')
@@ -87,15 +87,15 @@ router
 
 router
     .route('/products/getBySize')
-    .get(ctrlProducts.productsBySize)
+    .post(ctrlProducts.productsBySize)
 
 router
     .route('/products/getByColor')
-    .get(ctrlProducts.productsByColor)
+    .post(ctrlProducts.productsByColor)
 
 router
     .route('/products/getByPrice')
-    .get(ctrlProducts.productsByPrice)
+    .post(ctrlProducts.productsByPrice)
 
 
 // ProductsUsed
@@ -110,31 +110,31 @@ router
 
 router
     .route('/productsUsed/getByBrand')
-    .get(ctrlProductsUsed.productsUsedByBrand)
+    .post(ctrlProductsUsed.productsUsedByBrand)
 
 router
     .route('/productsUsed/getByGender')
-    .get(ctrlProductsUsed.productsUsedByGender)
+    .post(ctrlProductsUsed.productsUsedByGender)
 
 router
     .route('/productsUsed/getByCategory')
-    .get(ctrlProductsUsed.productsUsedByCategory)
+    .post(ctrlProductsUsed.productsUsedByCategory)
 
 router
     .route('/productsUsed/search')
-    .get(ctrlProductsUsed.productUsedByName)
+    .post(ctrlProductsUsed.productUsedByName)
 
 router
     .route('/productsUsed/getBySize')
-    .get(ctrlProductsUsed.productsUsedBySize)
+    .post(ctrlProductsUsed.productsUsedBySize)
 
 router
     .route('/productsUsed/getByColor')
-    .get(ctrlProductsUsed.productsUsedByColor)
+    .post(ctrlProductsUsed.productsUsedByColor)
 
 router
     .route('/productsUsed/getByPrice')
-    .get(ctrlProductsUsed.productsUsedByPrice)
+    .post(ctrlProductsUsed.productsUsedByPrice)
 
 
 // Brands
