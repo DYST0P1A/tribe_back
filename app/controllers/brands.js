@@ -38,6 +38,20 @@ const brandByName = async function(req, res) {
     }
 }
 
+const brandById = async function(req, res) {
+    try {
+        const idReq = req.body.id
+        const brand = await Brand.findById(idReq)
+        if (brand) {
+            return res.status(200).send(brand)
+        } else {
+            return res.status(404).json({ "message": "Marca no encontrada" })
+        }
+    } catch (error) {
+        return res.status(500).send({ "message": "error" })
+    }
+}
+
 const getBrands = async function(req, res) {
     try {
         const brands = await Brand.find({})
@@ -55,5 +69,6 @@ const getBrands = async function(req, res) {
 module.exports = {
     brandsCreate,
     brandByName,
-    getBrands
+    getBrands,
+    brandById
 };

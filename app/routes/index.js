@@ -147,6 +147,9 @@ router
     .route('/brands/search')
     .get(ctrlBrands.brandByName)
 
+router
+    .route('/brands/searchById')
+    .post(ctrlBrands.brandById)
 
 //Categories   
 router
