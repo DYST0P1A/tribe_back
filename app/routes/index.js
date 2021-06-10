@@ -145,7 +145,7 @@ router
 
 router
     .route('/brands/search')
-    .get(ctrlBrands.brandByName)
+    .post(ctrlBrands.brandByName)
 
 router
     .route('/brands/searchById')
